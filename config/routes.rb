@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :devdirectories
   resources :devfiles
   resources :homes
   devise_for :users
