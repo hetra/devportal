@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @devfile.name %>
+</p>
+
+<p>
+  <strong>Extension:</strong>
+  <%= @devfile.extension %>
+</p>
+
+<p>
+  <strong>Contents:</strong>
+  <%= @devfile.contents %>
+</p>
+
+<%= link_to 'Edit', edit_devfile_path(@devfile) %> |
+<%= link_to 'Back', devfiles_path %>

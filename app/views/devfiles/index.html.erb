@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Devfiles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Extension</th>
+      <th>Contents</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @devfiles.each do |devfile| %>
+      <tr>
+        <td><%= devfile.name %></td>
+        <td><%= devfile.extension %></td>
+        <td><%= devfile.contents %></td>
+        <td><%= link_to 'Show', devfile %></td>
+        <td><%= link_to 'Edit', edit_devfile_path(devfile) %></td>
+        <td><%= link_to 'Destroy', devfile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Devfile', new_devfile_path %>
