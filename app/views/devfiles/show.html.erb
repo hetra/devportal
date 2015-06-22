@@ -1,18 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @devfile.name %>
-</p>
-
-<p>
-  <strong>Extension:</strong>
-  <%= @devfile.extension %>
-</p>
+<h2><%= @devfile.name %>.<%= @devfile.extension %></h2>
 
 <p>
   <strong>Contents:</strong>
-  <%= @devfile.contents %>
+  <pre><code><%= @devfile.contents %></code></pre>
 </p>
 
 <%= link_to 'Edit', edit_devfile_path(@devfile) %> |

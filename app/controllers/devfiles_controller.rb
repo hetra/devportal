@@ -10,6 +10,9 @@ class DevfilesController < ApplicationController
   # GET /devfiles/1
   # GET /devfiles/1.json
   def show
+    @devfile = Devfile.find(params[:id]) # not strong parameters
+    #@devdirectory = @devfile.devdirectory
+    #@project = @devfile.project
   end
 
   # GET /devfiles/new

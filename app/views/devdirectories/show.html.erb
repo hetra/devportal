@@ -5,5 +5,24 @@
   <%= @devdirectory.name %>
 </p>
 
+<table>
+  <thead>
+    <tr>
+      <th>Contents</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @devfiles.each do |devfile| %>
+      <tr>
+        <td><%= link_to "#{devfile.name}.#{devfile.extension}", devfile %></td>
+        <td><%= link_to 'Rename', edit_devfile_path(devfile) %></td>
+        <td><%= link_to 'Delete', devfile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 <%= link_to 'Edit', edit_devdirectory_path(@devdirectory) %> |
 <%= link_to 'Back', devdirectories_path %>
