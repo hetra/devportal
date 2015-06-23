@@ -72,6 +72,6 @@ class DevfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def devfile_params
-      params.require(:devfile).permit(:name, :extension, :contents)
+      params.require(:devfile).permit(:name, :extension, :contents, :project_id, :devdirectory_id)
     end
 end

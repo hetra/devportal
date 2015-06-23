@@ -3,9 +3,7 @@
 <h2><%= @devfile.name %>.<%= @devfile.extension %></h2>
 
 <p>
-  <strong>Contents:</strong>
   <pre><code><%= @devfile.contents %></code></pre>
 </p>
 
 <%= link_to 'Edit', edit_devfile_path(@devfile) %> |
-<%= link_to 'Back', devfiles_path %>

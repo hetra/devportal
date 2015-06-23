@@ -71,6 +71,6 @@ class DevdirectoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def devdirectory_params
-      params.require(:devdirectory).permit(:name)
+      params.require(:devdirectory).permit(:name, :project_id, :devdirectory_id)
     end
 end
