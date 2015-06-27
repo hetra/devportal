@@ -14,6 +14,8 @@
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
 
+    <h1><%= link_to 'Devportal', root_path %></h1>
+    
     <p class="navbar-text pull-right">
     <% if user_signed_in? %>
       Logged in as <strong><%= current_user.email %></strong>.
@@ -24,6 +26,7 @@
       <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
     <% end %>
     
+    <hr>
     <%= yield %>
   </body>
 </html>

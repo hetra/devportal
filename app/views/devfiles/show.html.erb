@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h2><%= @devfile.name %>.<%= @devfile.extension %></h2>
+<% if @devdirectory.id > 0 %>
+<h2><%= @project.name %>/.../<%= @devdirectory.name %>/<%= @devfile.name %>.<%= @devfile.extension %></h2>
+<% else %>
+  <h2><%= @project.name %>/<%= @devfile.name %>.<%= @devfile.extension %></h2>
+<% end %>
 
 <p>
   <pre><code><%= @devfile.contents %></code></pre>
