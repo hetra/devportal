@@ -19,10 +19,14 @@ class DevfilesController < ApplicationController
   def new
     @devfile = Devfile.new
     @projects = Project.all
+    #@devdirectories = @project.devdirectories
   end
 
   # GET /devfiles/1/edit
   def edit
+    @devfile = Devfile.new
+    @projects = Project.all
+    # @devdirectories = @project.devdirectories
   end
 
   # POST /devfiles
