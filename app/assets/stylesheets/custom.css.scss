@@ -1,3 +1,32 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+@media (min-width: 858px) {
+    p {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 780px) {
+    p {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 702px) {
+    p {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 724px) {
+    p {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 623px) {
+    p {
+        font-size: 10px;
+    }
+}

@@ -5,4 +5,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   
   has_many :projects
+  has_many :stocks
+  has_many :portfolios
+  has_many :exchanges
+  has_many :devfiles
+  has_many :devdirectories
 end

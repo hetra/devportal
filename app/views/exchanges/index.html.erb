@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Exchanges</h1>
+
+<% @exchanges.each do |exchange| %>
+  <h2><%= link_to exchange.name, exchange_path(exchange) %> <small><% exchange.ticker %></small></h2>
+<% end %>
+
+<%= link_to 'New Exchange', new_exchange_path %>

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  ticker: MyString
+  description: MyText
+  open_time: 2015-07-03 09:37:40
+  close_time: 2015-07-03 09:37:40
+  headquarters: MyString
+  country: MyString
+
+two:
+  name: MyString
+  ticker: MyString
+  description: MyText
+  open_time: 2015-07-03 09:37:40
+  close_time: 2015-07-03 09:37:40
+  headquarters: MyString
+  country: MyString

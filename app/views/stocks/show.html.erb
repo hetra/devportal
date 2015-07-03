@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<h2><%= @stock.name %> <small><%= @exchange.ticker %>:<%= @stock.ticker %></small></h2>
+<p>
+  <%= @stock.description %>
+</p>
+
+<iframe src="https://au.finance.yahoo.com/charts?s=<%= @stock.ticker %>.<% if @exchange.ticker == "ASX" %>AX<% end %>#symbol=<%= @stock.ticker %>.<% if @exchange.ticker == "ASX" %>AX<% end %>;range=1m" width=100% height=650></iframe>
+
+<%= link_to 'Edit', edit_stock_path(@stock) %> |
+<%= link_to 'Back', stocks_path %>

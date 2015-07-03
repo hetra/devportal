@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Stocks <small><%= link_to '+', new_stock_path, {class:"btn btn-default"} %></small></h1>
+
+<% @stocks.each do |stock| %>
+  <h2><%= link_to stock.name, stock_path(stock) %> <small><%= stock.ticker %></small></h2>
+  <p><%= stock.description %></p>
+<% end %>
+

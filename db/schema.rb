@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150622221701) do
+ActiveRecord::Schema.define(version: 20150703000128) do
 
   create_table "devdirectories", force: :cascade do |t|
     t.string   "name"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20150622221701) do
     t.datetime "updated_at",      null: false
     t.integer  "project_id"
     t.integer  "devdirectory_id"
+    t.integer  "user_id"
   end
 
   create_table "devfiles", force: :cascade do |t|
@@ -29,6 +30,27 @@ ActiveRecord::Schema.define(version: 20150622221701) do
     t.datetime "updated_at",      null: false
     t.integer  "project_id"
     t.integer  "devdirectory_id"
+    t.integer  "user_id"
+  end
+
+  create_table "exchanges", force: :cascade do |t|
+    t.string   "name"
+    t.string   "ticker"
+    t.text     "description"
+    t.time     "open_time"
+    t.time     "close_time"
+    t.string   "headquarters"
+    t.string   "country"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "user_id"
+  end
+
+  create_table "portfolios", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
 
   create_table "projects", force: :cascade do |t|
@@ -38,6 +60,17 @@ ActiveRecord::Schema.define(version: 20150622221701) do
     t.string   "license"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "user_id"
+  end
+
+  create_table "stocks", force: :cascade do |t|
+    t.string   "name"
+    t.string   "ticker"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "user_id"
+    t.integer  "exchange_id"
   end
 
   create_table "users", force: :cascade do |t|

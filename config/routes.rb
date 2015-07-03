@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :exchanges
+  resources :portfolios
+  resources :stocks
   # get 'welcome/index'
 
   resources :projects

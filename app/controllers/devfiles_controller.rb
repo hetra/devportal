@@ -4,14 +4,22 @@ class DevfilesController < ApplicationController
   # GET /devfiles
   # GET /devfiles.json
   def index
-    @devfiles = Devfile.all
+    @devfiles = current_user.devfiles.all
   end
 
   # GET /devfiles/1
   # GET /devfiles/1.json
   def show
     @devfile = Devfile.find(params[:id])
-    @devdirectory = Devdirectory.find(@devfile.devdirectory_id)
+    
+    if @devfile.devdirectory_id > 0
+      @devdirectory = current_user.devdirectories.find(@devfile.devdirectory_id)
+    else
+      @devdirectory = Devdirectory.new
+      @devdirectory.id = 0
+      @devdirectory.name = ""
+    end
+    
     @project = Project.find(@devfile.project_id)
   end
 
@@ -24,7 +32,7 @@ class DevfilesController < ApplicationController
 
   # GET /devfiles/1/edit
   def edit
-    @devfile = Devfile.new
+    @devfile = current_user.devfiles.find(params[:id])
     @projects = Project.all
     # @devdirectories = @project.devdirectories
   end
@@ -33,6 +41,7 @@ class DevfilesController < ApplicationController
   # POST /devfiles.json
   def create
     @devfile = Devfile.new(devfile_params)
+    @devfile.user_id = current_user.id
 
     respond_to do |format|
       if @devfile.save

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @exchange.name %>
+</p>
+
+<p>
+  <strong>Ticker:</strong>
+  <%= @exchange.ticker %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @exchange.description %>
+</p>
+
+<p>
+  <strong>Open time:</strong>
+  <%= @exchange.open_time %>
+</p>
+
+<p>
+  <strong>Close time:</strong>
+  <%= @exchange.close_time %>
+</p>
+
+<p>
+  <strong>Headquarters:</strong>
+  <%= @exchange.headquarters %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @exchange.country %>
+</p>
+
+<%= link_to 'Edit', edit_exchange_path(@exchange) %> |
+<%= link_to 'Back', exchanges_path %>

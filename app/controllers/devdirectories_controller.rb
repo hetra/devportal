@@ -4,13 +4,13 @@ class DevdirectoriesController < ApplicationController
   # GET /devdirectories
   # GET /devdirectories.json
   def index
-    @devdirectories = Devdirectory.all
+    @devdirectories = current_user.devdirectories.all
   end
 
   # GET /devdirectories/1
   # GET /devdirectories/1.json
   def show
-    @devdirectory = Devdirectory.find(params[:id]) # not strong parameters
+    @devdirectory = current_user.devdirectories.find(params[:id]) # not strong parameters
     @devfiles = @devdirectory.devfiles.all
   end
 
@@ -27,7 +27,8 @@ class DevdirectoriesController < ApplicationController
   # POST /devdirectories.json
   def create
     @devdirectory = Devdirectory.new(devdirectory_params)
-
+    @devdirectory.user_id = current_user.id
+    
     respond_to do |format|
       if @devdirectory.save
         format.html { redirect_to @devdirectory, notice: 'Devdirectory was successfully created.' }
