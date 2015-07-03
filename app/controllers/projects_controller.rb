@@ -10,9 +10,10 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
-    @project = Project.find(params[:id])
+    @project = current_user.projects.find(params[:id])
     @devdirectories = @project.devdirectories.all
     @devfiles = @project.devfiles.all
+    @readme = @devfiles.where(name: "README", extension: "md").first
   end
 
   # GET /projects/new
