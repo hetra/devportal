@@ -17,11 +17,13 @@ class StocksController < ApplicationController
   # GET /stocks/new
   def new
     @stock = Stock.new
+    @exchanges = current_user.exchanges.all
   end
 
   # GET /stocks/1/edit
   def edit
     @stock = Stock.find(params[:id])
+    @exchanges = current_user.exchanges.all
   end
 
   # POST /stocks

@@ -23,6 +23,10 @@
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </div>
+  
+  <% options = options_from_collection_for_select(@exchanges, 'id', 'name') %>
+  <%= f.select :exchange_id,  options %>
+  
   <div class="actions">
     <%= f.submit 'Create', :class => "btn btn-success" %>
   </div>
